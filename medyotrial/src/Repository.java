@@ -2,7 +2,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 public class Repository {
-    private static final String DB_URL = "jdbc:sqlite:C:/Users/Gian Carlo/Documents/Codes/medyotrial/students.db";
+    private static final String DB_URL = "jdbc:sqlite:students.db";
     private Connection connection;
 
     public Repository() {
@@ -142,13 +142,6 @@ public class Repository {
             System.out.println("Close failed: " + e.getMessage());
         }
     }
-    public void printDatabasePath() {
-        try {
-            // This forces a connection and asks the driver for the actual path
-            String url = DriverManager.getConnection(DB_URL).getMetaData().getURL();
-            System.out.println("🔍 Database URL: " + url);
-        } catch (SQLException e) {
-            System.out.println("Could not get database path: " + e.getMessage());
-        }
     }
 }
+
